@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <link rel="stylesheet" href="index.css">
-        <script src="./index.js"></script>
-        <script src="./toasted.js"></script>
-        <title>Gerador de Grupos Aleatório</title>
-        <link rel="icon" type="imagem/png" href="./assests/user-friends-solid.png"/>
-    </head>
-    <body>
-        <header class="column">
-            <div id='header1'>
-                <img src="./assests/user-friends-solid.png" class="i">
-                <img src="./assests/user-plus-solid.png" class="i">
-            </div>
-            <div id='header2'>
-                <h1 class="word">Gerador de Grupos Aleatório</h1>
-            </div>
-        </header>
-        <section id="container" class="row">
-            <div class="column">
-                <div id='key-0' class="row containerInput">
-                    <input type="text" placeholder="Nome" onkeypress="this.style.borderColor = '#a5a5a5'" class="members word">
-                </div>
-                <div class="newMemberContainer row" onclick="addName()" onsubmit="addName()">
-                    <p class="word">Adicionar Nome</p>
-                    <img src="./assests/plus-solid.png" class="plus icon">
-                </div>
-            </div>
-            <div class="column" id="qtd-container">
-                <p class="word">N° de pessoas por grupo:</p>
-                <div id="btnQtd" class="row">
-                    <button onclick="changeNumberMember(-1)"><div class="subtract"></div></button>
-                    <input id='Number' type="text" value="2" class="word">
-                    <button onclick="changeNumberMember(1)"><img src="./assests/plus-solid.png" class="plus icon"></button>
-                </div>
-            </div>
-        </section>
-        <div id="btnContainer" class="row">
-            <button onclick="generateGroup()" class="row word btnModel">
-                Gerar Grupos
-                <img src="./assests/random-solid.svg" class="icon">
-            </button>
-            <br>
-            <button type="button" onclick="window.location.reload()" class="row word btnModel" name="button">
-                <img src="./assests/arrow-left-solid.svg" class="icon">
-                Voltar
-            </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
+    <script src="./toasted.js"></script>
+    <title>瓦瓦瓦权重分组器</title>
+</head>
+<body>
+<header class="column">
+    <div id='header2'>
+        <h1 class="word">权重分组器</h1>
+    </div>
+</header>
+<section id="container" class="row">
+    <div class="column">
+        <!-- 输入框区域 -->
+        <div id='key-0' class="row containerInput">
+            <span class="memberIndex">1.</span>
+            <input type="text" placeholder="铁蛋" value="铁蛋" onkeypress="this.style.borderColor = '#a5a5a5'" class="members word">
+            <input type="number" min="1" max="5" placeholder="5" value="5" class="weight word">
         </div>
-        <div id='groupContainer'></div>
-    </body>
+    </div>
+    <div class="column" id="qtd-container">
+        <p class="word">每组人数:</p>
+        <div id="btnQtd" class="row">
+            <button onclick="changeNumberMember(-1)"><div class="subtract"></div></button>
+            <input id='Number' type="text" value="4" class="word">
+            <button onclick="changeNumberMember(1)"><div class="plus"></div></button>
+        </div>
+    </div>
+</section>
+<div id="btnContainer" class="row">
+    <button onclick="generateGroup()" class="row word btnModel">
+        生成分组
+    </button>
+    <br>
+    <button type="button" onclick="window.location.reload()" class="row word btnModel" name="button">
+        返回
+    </button>
+</div>
+<div id='groupContainer'></div>
+</body>
 </html>
